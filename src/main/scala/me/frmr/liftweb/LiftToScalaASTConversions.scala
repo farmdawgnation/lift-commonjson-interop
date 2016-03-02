@@ -5,35 +5,41 @@ import scala.json.ast.fast
 import scala.scalajs.js
 
 object LiftToScalaASTConversions {
-  def toScalaAST(input: json.JValue): fast.JValue = input match {
+  def toScalaAST(input: json.JValue): Option[fast.JValue] = input match {
     case json.JString(string) =>
-      fast.JString(string)
+      Some(fast.JString(string))
 
     case json.JBool(true) =>
-      fast.JTrue
+      Some(fast.JTrue)
 
     case json.JBool(false) =>
-      fast.JFalse
+      Some(fast.JFalse)
 
     case json.JDouble(number) =>
-      fast.JNumber(number)
+      Some(fast.JNumber(number))
 
     case json.JInt(number) =>
-      fast.JNumber(number)
+      Some(fast.JNumber(number))
 
-    case json.JNothing | json.JNull =>
-      fast.JNull
+    case json.JNull =>
+      Some(fast.JNull)
 
     case json.JArray(items) =>
-      fast.JArray(items.map(toScalaAST).toArray)
+      Some(fast.JArray(items.flatMap(toScalaAST).toArray))
 
     case json.JObject(fields) =>
-      fast.JObject(convertFields(fields))
+      Some(fast.JObject(convertFields(fields)))
+
+    case json.JNothing =>
+      None
   }
 
   private def convertFields(input: List[json.JField]): Array[fast.JField] = {
-    val resultingFields = for (liftfield <- input) yield {
-      fast.JField(liftfield.name, toScalaAST(liftfield.value))
+    val resultingFields = for {
+      liftfield <- input
+      liftvalue <- toScalaAST(liftfield.value)
+    } yield {
+      fast.JField(liftfield.name, liftvalue)
     }
 
     resultingFields.toArray
