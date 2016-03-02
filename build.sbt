@@ -10,3 +10,5 @@ libraryDependencies ++= Seq(
   "net.liftweb"    %% "lift-json"       % "3.0-M8",
   "scala-json-ast" %% "scala-json-ast"  % "1.0.0-SNAPSHOT"
 )
+
+enablePlugins(ScalaJSPlugin)
