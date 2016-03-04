@@ -2,7 +2,6 @@ package me.frmr.liftweb
 
 import net.liftweb.json
 import scala.json.ast.fast
-import scala.scalajs.js
 
 object LiftToScalaASTConversions {
   def toScalaAST(input: json.JValue): Option[fast.JValue] = input match {

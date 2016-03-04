@@ -11,4 +11,3 @@ libraryDependencies ++= Seq(
   "scala-json-ast" %% "scala-json-ast"  % "1.0.0-SNAPSHOT"
 )
 
-enablePlugins(ScalaJSPlugin)

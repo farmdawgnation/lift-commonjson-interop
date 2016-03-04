@@ -2,7 +2,6 @@ package me.frmr.liftweb
 
 import net.liftweb.json
 import scala.json.ast.fast
-import scala.scalajs.js
 
 object ScalaToLiftASTConversions {
   def toLiftAST(input: fast.JValue): json.JValue = input match {
