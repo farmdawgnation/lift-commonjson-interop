@@ -1,10 +1,12 @@
-name := "lift-commonjson-interop"
+name := "liftjson-scalajson-interop"
 
-organization := "me.frmr.liftweb"
+organization := "me.frmr.jsonutils"
 
 version := "0.0.1"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.1"
+
+crossScalaVersions := Seq("2.11.8", "2.12.1")
 
 libraryDependencies ++= Seq(
   "net.liftweb"    %% "lift-json"       % "3.0.1",

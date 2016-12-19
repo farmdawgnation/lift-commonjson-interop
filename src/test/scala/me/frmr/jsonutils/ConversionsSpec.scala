@@ -1,4 +1,4 @@
-package me.frmr.liftweb
+package me.frmr.jsonutils
 
 import org.scalactic._
 import org.scalatest._

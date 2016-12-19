@@ -1,4 +1,4 @@
-package me.frmr.liftweb
+package me.frmr.jsonutils
 
 import net.liftweb.json
 import scala.json.ast.unsafe
