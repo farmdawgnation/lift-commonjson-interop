@@ -8,7 +8,7 @@ import org.scalacheck.Gen
 import scala.json.ast.unsafe
 
 class ConversionsSpec extends WordSpec
-                      with ShouldMatchers
+                      with Matchers
                       with GeneratorDrivenPropertyChecks
                       with PrettyMethods {
   "Conversions" when {
