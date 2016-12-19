@@ -21,7 +21,7 @@ object ScalaToLiftASTConversions {
       try {
         json.JInt(numberString.toInt)
       } catch {
-        case e: Exception =>
+        case NonFatal(e) =>
           json.JDouble(numberString.toDouble)
       }
 
