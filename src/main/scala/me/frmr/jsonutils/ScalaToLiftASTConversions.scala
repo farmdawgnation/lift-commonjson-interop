@@ -2,8 +2,19 @@ package me.frmr.jsonutils
 
 import net.liftweb.json
 import scala.json.ast.unsafe
+import scala.util.control.NonFatal
 
+/**
+ * Implements the conversions from the Scala Common JSON's unsafe AST to Lift-Json's AST.
+ */
 object ScalaToLiftASTConversions {
+  /**
+   * Convert an unsafe AST to a Lift-Json AST.
+   *
+   * Since this conversion is from the unsafe AST, there is some amount of risk in invoking this
+   * method since numbers in the unsafe AST are represented as strings. If those strings are
+   * invalid numbers, you can expect to receive exceptions when you attempt to run this conversion.
+   */
   def toLiftAST(input: unsafe.JValue): json.JValue = input match {
     case unsafe.JTrue =>
       json.JBool(true)

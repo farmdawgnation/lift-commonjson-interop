@@ -3,7 +3,16 @@ package me.frmr.jsonutils
 import net.liftweb.json
 import scala.json.ast.unsafe
 
+/**
+ * Implements the conversions from a Lift-Json JValue to the Scala Common JSON AST.
+ */
 object LiftToScalaASTConversions {
+  /**
+   * Convert a Lift-Json JValue to an unsafe JValue in the Scala Common JSON AST.
+   *
+   * This conversion returns an Option since there is no equivalent for JNothing in the Scala
+   * Common JSON AST.
+   */
   def toScalaAST(input: json.JValue): Option[unsafe.JValue] = input match {
     case json.JString(string) =>
       Some(unsafe.JString(string))
