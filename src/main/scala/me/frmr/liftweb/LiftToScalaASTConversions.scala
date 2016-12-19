@@ -1,44 +1,44 @@
 package me.frmr.liftweb
 
 import net.liftweb.json
-import scala.json.ast.fast
+import scala.json.ast.unsafe
 
 object LiftToScalaASTConversions {
-  def toScalaAST(input: json.JValue): Option[fast.JValue] = input match {
+  def toScalaAST(input: json.JValue): Option[unsafe.JValue] = input match {
     case json.JString(string) =>
-      Some(fast.JString(string))
+      Some(unsafe.JString(string))
 
     case json.JBool(true) =>
-      Some(fast.JTrue)
+      Some(unsafe.JTrue)
 
     case json.JBool(false) =>
-      Some(fast.JFalse)
+      Some(unsafe.JFalse)
 
     case json.JDouble(number) =>
-      Some(fast.JNumber(number))
+      Some(unsafe.JNumber(number))
 
     case json.JInt(number) =>
-      Some(fast.JNumber(number))
+      Some(unsafe.JNumber(number))
 
     case json.JNull =>
-      Some(fast.JNull)
+      Some(unsafe.JNull)
 
     case json.JArray(items) =>
-      Some(fast.JArray(items.flatMap(toScalaAST).toArray))
+      Some(unsafe.JArray(items.flatMap(toScalaAST).toArray))
 
     case json.JObject(fields) =>
-      Some(fast.JObject(convertFields(fields)))
+      Some(unsafe.JObject(convertFields(fields)))
 
     case json.JNothing =>
       None
   }
 
-  private def convertFields(input: List[json.JField]): Array[fast.JField] = {
+  private def convertFields(input: List[json.JField]): Array[unsafe.JField] = {
     val resultingFields = for {
       liftfield <- input
       liftvalue <- toScalaAST(liftfield.value)
     } yield {
-      fast.JField(liftfield.name, liftvalue)
+      unsafe.JField(liftfield.name, liftvalue)
     }
 
     resultingFields.toArray

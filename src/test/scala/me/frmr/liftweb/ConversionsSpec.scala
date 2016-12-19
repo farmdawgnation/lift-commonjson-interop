@@ -5,7 +5,7 @@ import org.scalatest._
 import org.scalatest.prop._
 import org.scalacheck.Gen
 
-import scala.json.ast.fast
+import scala.json.ast.unsafe
 
 class ConversionsSpec extends WordSpec
                       with ShouldMatchers
@@ -34,10 +34,10 @@ class ConversionsSpec extends WordSpec
           // should is actually an Array, but if you're comparing a case class
           // that contains an Array the bad things happen?
           (inputValue, scalaValue) match {
-            case (fast.JObject(inValues), fast.JObject(outValues)) =>
+            case (unsafe.JObject(inValues), unsafe.JObject(outValues)) =>
               inValues should equal(outValues)
 
-            case (fast.JArray(inValues), fast.JArray(outValues)) =>
+            case (unsafe.JArray(inValues), unsafe.JArray(outValues)) =>
               inValues should equal(outValues)
 
             case _ =>

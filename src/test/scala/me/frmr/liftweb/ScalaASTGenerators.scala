@@ -2,7 +2,7 @@ package me.frmr.liftweb
 
 import org.scalacheck.Gen
 
-import scala.json.ast.fast._
+import scala.json.ast.unsafe._
 
 object ScalaASTGenerators {
   def jString = for {
