@@ -2,10 +2,10 @@
 
 [![Build Status](https://travis-ci.org/farmdawgnation/liftjson-scalajson-interop.svg?branch=master)](https://travis-ci.org/farmdawgnation/liftjson-scalajson-interop)
 
-This package implements interoperability between lift-json's AST and the Scala JSON AST that
-is being proposed for inclusion in the Scala language. The motivation of the new Scala
-AST that has been proposed is to provide true interoperability between all libraries that talk in
-JSON across the Scala language.
+This package implements interoperability between lift-json's AST and the
+[Scala JSON AST](https://github.com/mdedetrich/scala-json-ast) that is being proposed for inclusion
+in the Scala language. The motivation of the new Scala AST that has been proposed is to provide true
+interoperability between all libraries that talk in JSON across the Scala language.
 
 In the current ecosystem, you're not guaranteed compatibility between json4s, play-json, spay-json,
 and any other library. This is particularly problematic as applications grow and evolve in
