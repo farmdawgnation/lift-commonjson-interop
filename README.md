@@ -1,5 +1,7 @@
 # LiftJSON / Scala JSON AST Interop
 
+[![Build Status](https://travis-ci.org/farmdawgnation/liftjson-scalajson-interop.svg?branch=master)](https://travis-ci.org/farmdawgnation/liftjson-scalajson-interop)
+
 This package implements interoperability between lift-json's AST and the Scala JSON AST that
 is being proposed for inclusion in the Scala language. The motivation of the new Scala
 AST that has been proposed is to provide true interoperability between all libraries that talk in
