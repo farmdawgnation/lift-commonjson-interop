@@ -17,3 +17,35 @@ libraryDependencies ++= Seq(
 )
 
 scalacOptions ++= Seq("-unchecked", "-feature", "-deprecation")
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (version.value.trim.endsWith("SNAPSHOT")) {
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  } else {
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+  }
+}
+
+credentials += Credentials(Path.userHome / ".sonatype")
+
+pomExtra :=
+<url>https://github.com/farmdawgnation/lift-newrelic</url>
+<licenses>
+  <license>
+    <name>Apache 2</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+<scm>
+  <url>https://github.com/farmdawgnation/liftjson-scalajson-interop.git</url>
+  <connection>https://github.com/farmdawgnation/liftjson-scalajson-interop.git</connection>
+</scm>
+<developers>
+  <developer>
+    <id>farmdawgnation</id>
+    <name>Matt Farmer</name>
+    <email>matt@frmr.me</email>
+  </developer>
+</developers>
