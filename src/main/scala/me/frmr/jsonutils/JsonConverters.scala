@@ -1,8 +1,8 @@
 package me.frmr.jsonutils
 
 import net.liftweb.{json => liftjson}
-import scala.json.ast.unsafe
-import scala.json.ast
+import scalajson.ast.unsafe
+import scalajson.ast
 
 /**
  * Provides explicit conversion functions for converting between the standard and unsafe Scala

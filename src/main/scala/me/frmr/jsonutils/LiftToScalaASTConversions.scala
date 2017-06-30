@@ -1,7 +1,7 @@
 package me.frmr.jsonutils
 
 import net.liftweb.json
-import scala.json.ast.unsafe
+import scalajson.ast.unsafe
 
 /**
  * Implements the conversions from a Lift-Json JValue to the Scala Common JSON AST.

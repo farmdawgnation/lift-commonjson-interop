@@ -36,10 +36,10 @@ using simple converter functions.
 import me.frmr.jsonutils.JsonConverters._
 
 // Convert Lift to Standard AST.
-liftJsonObj.toStandardScalaAST        // => Option[scala.json.ast.JValue]
+liftJsonObj.toStandardScalaAST        // => Option[scalajson.ast.JValue]
 
 // Convert Lift to Unsafe AST.
-liftJsonObj.toUnsafeScalaAST          // => Option[scala.json.ast.unsafe.JValue]
+liftJsonObj.toUnsafeScalaAST          // => Option[scalajson.ast.unsafe.JValue]
 
 // Convert standard AST to Lift AST
 standardObj.toLiftAST                 // => net.liftweb.json.JValue

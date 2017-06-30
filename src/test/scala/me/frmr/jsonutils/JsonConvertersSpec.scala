@@ -3,8 +3,8 @@ package me.frmr.jsonutils
 import org.scalatest._
 import me.frmr.jsonutils.JsonConverters._
 import net.liftweb.{json => liftjson}
-import scala.json.ast
-import scala.json.ast.unsafe
+import scalajson.ast
+import scalajson.ast.unsafe
 
 class JsonConvertersSpec extends WordSpec with Matchers {
   "JsonConverters" should {

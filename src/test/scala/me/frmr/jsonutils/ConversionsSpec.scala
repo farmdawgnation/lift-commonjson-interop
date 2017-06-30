@@ -5,7 +5,7 @@ import org.scalatest._
 import org.scalatest.prop._
 import org.scalacheck.Gen
 
-import scala.json.ast.unsafe
+import scalajson.ast.unsafe
 
 class ConversionsSpec extends WordSpec
                       with Matchers

@@ -2,7 +2,7 @@ package me.frmr.jsonutils
 
 import org.scalacheck.Gen
 
-import scala.json.ast.unsafe._
+import scalajson.ast.unsafe._
 
 object ScalaASTGenerators {
   def jString = for {
