@@ -4,9 +4,9 @@ organization := "me.frmr.jsonutils"
 
 version := "0.2.0-SNAPSHOT"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.2"
 
-crossScalaVersions := Seq("2.11.8", "2.12.1")
+crossScalaVersions := Seq("2.11.11", "2.12.2")
 
 libraryDependencies ++= Seq(
   "net.liftweb"             %% "lift-json"       % "3.1.0"      % "provided",
