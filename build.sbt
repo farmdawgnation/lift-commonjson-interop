@@ -9,8 +9,8 @@ scalaVersion := "2.12.1"
 crossScalaVersions := Seq("2.11.8", "2.12.1")
 
 libraryDependencies ++= Seq(
-  "net.liftweb"             %% "lift-json"       % "3.1.0-RC1"  % "provided",
-  "org.scala-lang.platform" %% "scalajson"       % "1.0.0-M2"   % "provided",
+  "net.liftweb"             %% "lift-json"       % "3.1.0"      % "provided",
+  "org.scala-lang.platform" %% "scalajson"       % "1.0.0-M3"   % "provided",
 
   "org.scalatest"  %% "scalatest"       % "3.0.1"      % "test",
   "org.scalacheck" %% "scalacheck"      % "1.13.4"     % "test"
