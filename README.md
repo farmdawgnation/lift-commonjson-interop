@@ -26,7 +26,7 @@ dependency.
 libraryDependencies ++= Seq(
   "net.liftweb"                %% "lift-json"                  % "3.1.0",
   "org.scala-lang.platform"    %% "scala-json-ast"             % "1.0.0-M3",
-  "me.frmr.jsonutils"          %% "liftjson-scalajson-interop" % "0.1.0"
+  "me.frmr.jsonutils"          %% "liftjson-scalajson-interop" % "0.2.0"
 )
 ```
 
