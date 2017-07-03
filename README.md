@@ -17,14 +17,16 @@ sometimes nontrivial and, if done in application code, likely not well documente
 
 ## Using
 
+This library requires Java 8 because Lift requies Java 8.
+
 To use this library in your application, simply include it along with your Lift and scala-json-ast
 dependency.
 
 ```scala
 libraryDependencies ++= Seq(
-  "net.liftweb"       %% "lift-json"                  % "3.0.1",
-  "org.mdedetrich"    %% "scala-json-ast"             % "1.0.0-M6",
-  "me.frmr.jsonutils" %% "liftjson-scalajson-interop" % "0.1.0"
+  "net.liftweb"                %% "lift-json"                  % "3.1.0",
+  "org.scala-lang.platform"    %% "scala-json-ast"             % "1.0.0-M3",
+  "me.frmr.jsonutils"          %% "liftjson-scalajson-interop" % "0.1.0"
 )
 ```
 
